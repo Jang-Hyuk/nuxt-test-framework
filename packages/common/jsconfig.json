@@ -1,0 +1,23 @@
+{
+  "extends": "../../jsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"be/*": ["../backend/src/*"],
+			"cm/*": ["../common/src/*"],
+			"fe/*": ["../frontend/*"],
+			"~/*": ["../frontend/*"],
+			"@/*": ["../frontend/*"]
+		}
+	},
+	"include": [
+		"**/*.js",
+		"**/*.ts",
+		"../backend/src/interfaces",
+		"../backend/src/types",
+		"../frontend/interfaces",
+		"../frontend/types",
+		"../common/src/interfaces",
+		"../common/src/types"
+	]
+}

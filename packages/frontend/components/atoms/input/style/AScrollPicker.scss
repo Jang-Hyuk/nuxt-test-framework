@@ -1,0 +1,8 @@
+.vscroller { flex: 1 auto; -webkit-flex: 1 auto; -ms-flex: 1 auto; min-width: 40px; max-width: 100%; padding: 0; -webkit-box-flex: 1; touch-action: none; -webkittouch-action: none; }
+.vscroller__head { @include font_default(15px, 700, $typo_main); width: 100%; height: 30px; line-height: 30px; white-space: nowrap; }
+.vscroller__body { position: relative; height: 200px; overflow: hidden; }
+.vscroller__body:before { content: ''; display: block; position: absolute; top: 80px; left: 0; bottom: auto; right: auto; z-index: 1; width: 100%; height: 1px; background-color: $typo_brand; }
+.vscroller__body:after { content: ''; display: block; position: absolute; top: auto; left: 0; bottom: 80px; right: auto; z-index: 1; width: 100%; height: 1px; background-color: $typo_brand; }
+.vscroller__body ul { display: block; position: relative; z-index: 3; margin: 0; padding: 0; transform: translate3d(0, 0, 0); }
+.vscroller__body li { @include font_default(13px, 400, $typo_sub2); display: block; position: relative; vertical-align: bottom; width: 100%; height: 40px; line-height: 40px; margin: 0; padding: 0 5px; text-align: center; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; cursor: pointer; }
+.vscroller__body li.vselected { @include font_default(13px, 700, $typo_brand); }

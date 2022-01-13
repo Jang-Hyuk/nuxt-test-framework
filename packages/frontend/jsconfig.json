@@ -1,0 +1,24 @@
+{
+	"extends": "../../jsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~/*": ["./*"],
+			"@/*": ["./*"],
+			"be/*": ["../backend/src/*"],
+			"cm/*": ["../common/src/*"],
+		},
+	},
+	"include": [
+		"**/*.js",
+		"**/*.ts",
+		"**/*.vue",
+		"../backend/src/interfaces",
+		"../backend/src/types",
+		"../frontend/interfaces",
+		"../frontend/types",
+		"../common/src/interfaces",
+		"../common/src/types"
+	],
+	"exclude": ["coverage"]
+}

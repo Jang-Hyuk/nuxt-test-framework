@@ -1,0 +1,325 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"node": true,
+		"jest": true
+	},
+	"extends": [
+		"airbnb-base",
+		"plugin:vue/recommended",
+		"plugin:nuxt/recommended",
+		"plugin:prettier/recommended",
+		"plugin:jest/recommended"
+	],
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"requireConfigFile": false,
+		"ecmaVersion": 2021,
+		"sourceType": "module"
+	},
+	"plugins": ["sort-class-members", "jsdoc"],
+	"ignorePatterns": "_",
+	"globals": {
+		"globalThis": false,
+		"*": false,
+		"DIFB": false,
+		"DIFC": false,
+		"DITB": false,
+		"DITC": false
+	},
+	// add your custom rules here
+	"rules": {
+		"no-underscore-dangle": "off",
+
+		"sort-class-members/sort-class-members": [
+			2,
+			{
+				"order": [
+					"[static-properties]",
+					"[static-methods]",
+					"[customProperties]",
+					"constructor",
+					// ["getters"],
+					// ["setters"],
+					// "[methods]",
+					"[event-handlers]", // reference the custom group defined in the "groups" property
+					"[everything-else]" // a few groups are provided by default (see list below)
+				],
+				"groups": {
+          "customProperties": [
+            { "type": "property", "sort": "alphabetical" }
+          ],
+					"event-handlers": [
+						{ "name": "/init|init.+/", "type": "method" },
+						{ "type": "method", "kind": "get", "sort": "alphabetical" },
+						{ "type": "method", "sort": "alphabetical" },
+						{ "type": "method", "async": true, "sort": "alphabetical" }
+					]
+				},
+				"accessorPairPositioning": "getThenSet"
+			}
+		],
+
+		/**********************/
+		/* Global Code Rules */
+		/**********************/
+		"no-empty-function": "off",
+		"linebreak-style": "off",
+		// "quotes": "error",
+		"no-console": "off",
+		"max-len": "off",
+		"no-unused-expressions": "off",
+		"no-unused-vars": [
+			"warn",
+			{
+				// "varsIgnorePattern": "^_",
+				"args": "none",
+				"ignoreRestSiblings": true,
+				"caughtErrors": "none",
+				"caughtErrorsIgnorePattern": "^ignore"
+			}
+		],
+		"no-param-reassign": "off",
+		"class-methods-use-this": "off",
+		"consistent-return": "off",
+		"prefer-arrow-callback": "off",
+		"func-names": "off",
+		"no-bitwise": ["error", { "allow": ["^"] }],
+
+		/**********************/
+		/* General Code Rules */
+		/**********************/
+		// Enforce import order
+		"import/order": "error",
+
+		// 동적 로딩 허용
+		"import/no-dynamic-require": "off",
+
+		// .vue ~ syntax 처리
+		"import/extensions": "off",
+		// "import/extensions": [
+		//   "error",
+		//   { "js": "always", "vue": "always", "jsx": "always"
+		// }],
+
+		// nuxt.js 자체에서 포함하는 vuex 모듈 때문에 생기는 문제 처리
+		"import/no-extraneous-dependencies": "off",
+
+		// Imports should come first
+		"import/first": "error",
+
+		// Other import rules
+		"import/no-mutable-exports": "error",
+
+		// Allow unresolved imports
+		"import/no-unresolved": "off",
+
+		"no-plusplus": "off",
+
+		// Allow async-await
+		"generator-star-spacing": "off",
+
+		// Prefer const over let
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "any",
+				"ignoreReadBeforeAssign": false
+			}
+		],
+
+		// No single if in an "else" block
+		"no-lonely-if": "error",
+
+    "no-irregular-whitespace": "off",
+
+		// Force curly braces for control flow,
+		// including if blocks with a single statement
+		"curly": ["error", "all"],
+
+		// No async function without await
+		"require-await": "error",
+
+		// Force dot notation when possible
+		"dot-notation": "error",
+
+		"no-var": "error",
+
+		// Force object shorthand where possible
+		"object-shorthand": "error",
+
+		// No useless destructuring/importing/exporting renames
+		"no-useless-rename": "error",
+
+		/**********************/
+		/*     Vue Rules      */
+		/**********************/
+		// "vue/no-multi-spaces": [
+		//   "error",
+		//   {
+		//     ignoreProperties: false,
+		//   },
+		// ],
+
+		"no-shadow": "off",
+
+		// 한줄 요소의 내용 앞 뒤에 줄 바꿈 요소 적용 여부
+		"vue/singleline-html-element-content-newline": "off",
+
+		// Disable template errors regarding invalid end tags
+		"vue/no-parsing-error": [
+			"error",
+			{
+				"x-invalid-end-tag": false
+			}
+		],
+
+		// Maximum 5 attributes per line instead of one
+		"vue/max-attributes-per-line": "off",
+		// "vue/max-attributes-per-line": [
+		//   "error",
+		//   {
+		//     "singleline": 5
+		//   }
+		// ],
+
+		/***************************/
+		/* ESLint Vue Plugin Rules */
+		/***************************/
+		"vue/html-indent": [
+			"error",
+			"tab",
+			{
+				"attribute": 1,
+				"baseIndent": 1,
+				"closeBracket": 0,
+				"alignAttributesVertically": true,
+				"ignores": []
+			}
+		],
+
+		"vue/order-in-components": [
+			"error",
+			{
+				"order": [
+					"el",
+					"name",
+					"parent",
+					"functional",
+					["delimiters", "comments"],
+					["components", "directives", "filters"],
+					"extends",
+					"mixins",
+					"inheritAttrs",
+					"model",
+					["props", "propsData"],
+					"fetch",
+					"asyncData",
+					"data",
+					"computed",
+					"watch",
+					"LIFECYCLE_HOOKS",
+					"methods",
+					"head",
+					["template", "render"],
+					"renderError"
+				]
+			}
+		],
+		"global-require": 0,
+		"vue/html-self-closing": ["off"],
+    // "vue/component-name-in-template-casing": [
+    //   "error",
+    //   "kebab-case",
+    //   {
+    //     "ignores": [
+    //       "nuxt",
+    //       "nuxt-link"
+    //     ]
+    //   }
+    // ],
+
+		// https://eslint.vuejs.org/rules/attributes-order.html
+		// TODO: 팀 내 기준으로 재조정 필요
+		"vue/attributes-order": [
+			"error",
+			{
+				"order": [
+					"DEFINITION",
+					"LIST_RENDERING",
+					"CONDITIONALS",
+					"RENDER_MODIFIERS",
+					"GLOBAL",
+					"UNIQUE",
+					"TWO_WAY_BINDING",
+					"OTHER_DIRECTIVES",
+					"OTHER_ATTR",
+					"EVENTS",
+					"CONTENT"
+				]
+			}
+		],
+
+		/***************************/
+		/* ESLint Nuxt Plugin Rules */
+		/***************************/
+		"nuxt/no-cjs-in-config": 0,
+
+		/***************************/
+		/* ESLint Jsdoc Plugin Rules */
+		/***************************/
+		"jsdoc/check-access": 1, // Recommended
+		"jsdoc/check-alignment": 1, // Recommended
+		"jsdoc/check-examples": 0,
+		"jsdoc/check-indentation": 0,
+		"jsdoc/check-line-alignment": 0,
+		"jsdoc/check-param-names": 0, // Recommended
+		"jsdoc/check-property-names": 1, // Recommended
+		"jsdoc/check-syntax": 0,
+		"jsdoc/check-tag-names": 0, // Recommended
+		"jsdoc/check-types": 1, // Recommended
+		"jsdoc/check-values": 1, // Recommended
+		"jsdoc/empty-tags": 0, // Recommended
+		"jsdoc/implements-on-classes": 1, // Recommended
+		"jsdoc/match-description": 0,
+		"jsdoc/multiline-blocks": 1, // Recommended
+		"jsdoc/newline-after-description": 0, // Recommended
+		"jsdoc/no-bad-blocks": 0,
+		"jsdoc/no-defaults": 0,
+		"jsdoc/no-missing-syntax": 0,
+		"jsdoc/no-multi-asterisks": 0, // Recommended
+		"jsdoc/no-restricted-syntax": 0,
+		"jsdoc/no-types": 0,
+		"jsdoc/no-undefined-types": 0, // Recommended
+		"jsdoc/require-asterisk-prefix": 0,
+		"jsdoc/require-description": 0,
+		"jsdoc/require-description-complete-sentence": 0,
+		"jsdoc/require-example": 0,
+		"jsdoc/require-file-overview": 0,
+		"jsdoc/require-hyphen-before-param-description": 0,
+		"jsdoc/require-jsdoc": 1, // Recommended
+		"jsdoc/require-param": 0, // Recommended
+		"jsdoc/require-param-description": 0, // Recommended
+		"jsdoc/require-param-name": 1, // Recommended
+		"jsdoc/require-param-type": 0, // Recommended
+		"jsdoc/require-property": 1, // Recommended
+		"jsdoc/require-property-description": 1, // Recommended
+		"jsdoc/require-property-name": 1, // Recommended
+		"jsdoc/require-property-type": 1, // Recommended
+		"jsdoc/require-returns": 0, // Recommended
+		"jsdoc/require-returns-check": 0, // Recommended
+		"jsdoc/require-returns-description": 0, // Recommended
+		"jsdoc/require-returns-type": 0, // Recommended
+		"jsdoc/require-throws": 0,
+		"jsdoc/require-yields": 1, // Recommended
+		"jsdoc/require-yields-check": 1, // Recommended
+		"jsdoc/tag-lines": 1, // Recommended
+		"jsdoc/valid-types": 0, // Recommended
+
+		/***************************/
+		/* ESLint Jest Plugin Rules */
+		/***************************/
+		"jest/no-disabled-tests": 0
+	}
+}

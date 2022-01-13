@@ -1,0 +1,21 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "공통 모듈",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext \".js,.ts,.ts\" --ignore-path ../../.gitignore .",
+    "lint:fix": "yarn lint --fix",
+    "lint:w": "esw --ext \".js,.ts,.ts\" --ignore-path ../../.gitignore . -w --color",
+    "test:w": "jest --watch",
+    "test": "jest --detectOpenHandles",
+    "test:c": "jest --detectOpenHandles --coverage",
+    "test:cw": "jest --detectOpenHandles --coverage --watch",
+    "test:cwf": "jest --detectOpenHandles --coverage --watch --runTestsByPath"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
