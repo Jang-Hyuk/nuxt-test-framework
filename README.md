@@ -1,8 +1,4 @@
-<p align="left"><img width="128px" src="https://nuxtjs.org/logos/nuxt.svg"></p>
-
-
-# Renewal TongTong
-
+# Workspace
 
 ## Installation
 ```bash
