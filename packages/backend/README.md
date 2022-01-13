@@ -1,4 +1,4 @@
-# Club5678 Renewal Backend 🛡️
+# Backend 🛡️
 
 이 구조는 아래의 정보를 기반으로 작성되었습니다.
 
@@ -23,14 +23,14 @@ src
 └───services        # All the business logic is here
 └───types           # Type declaration files (d.ts) for Typescript
 
-We use `node` version `14.17.0`
+We use `node` version `16 LTS`
 
 ```
-nvm install 14.17.0
+nvm install --lts
 ```
 
 ```
-nvm use 14.17.0
+nvm use 16
 ```
 
 The first time, you will need to run
@@ -49,11 +49,6 @@ It uses nodemon for livereloading :peace-fingers:
 ## Online one-click setup
 
 You can use Gitpod for the one click online setup. With a single click it will launch a workspace and automatically:
-
-- clone the `nuxtExercise` repo.
-- install the dependencies.
-- run `cp .env.example .env`.
-- run `npm run start`.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
