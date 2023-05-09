@@ -138,9 +138,3 @@ class CmConversionUtil {
 }
 
 module.exports = new CmConversionUtil();
-
-// string util encode
-// 21519207_202108311634052663.jpg
-// 2072=760W;:9==6<! $  %#%./)5vmy
-// kossy2k2_202106091607579606.jpg
-// knqp}7m5W;:9==8?) $## !..),5vmy

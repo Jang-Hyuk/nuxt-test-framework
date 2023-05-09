@@ -142,13 +142,8 @@ module.exports = {
 
 		container.loadModules(
 			[
-				resolve(beSrcPath, 'services', 'fastMeet', '*.js'),
-				resolve(beSrcPath, 'services', 'fastVideo', '*.js'),
-
-				resolve(beSrcPath, 'models', 'fastMeet', '*.js'),
-				resolve(beSrcPath, 'models', 'fastVideo', '*.js'),
-				resolve(beSrcPath, 'models', 'fastCall', '*.js'),
-				resolve(beSrcPath, 'models', 'wallet', '*.js'),
+				resolve(beSrcPath, 'services', 'tempService', '*.js'),
+		
 				resolve(beSrcPath, 'models', 'event', '*.js'),
 			],
 			{

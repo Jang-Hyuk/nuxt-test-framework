@@ -60,12 +60,8 @@ export default {
 	},
 	header: {
 		title: {
-			PICTURE: '영상통통',
-			TALK: '빠른대화',
 		},
 		menu: {
-			talk: '빠른대화',
-			meeting: '빠른만남',
 			alarm: '알림설정',
 			notice: '공지사항',
 			inquiry: '고객문의',
@@ -159,12 +155,9 @@ export default {
 	},
 	alarm: {
 		receiveSet: {
-			'fast-video': '빠른대화 수신알림',
-			'fast-meet': '빠른만남 신규 메시지 알림',
 		},
 		timeSet: {
 			'fast-video': '방해금지 시간설정',
-			'fast-meet': '빠른만남 신규 등록글 알림',
 		},
 	},
 	confirm: {

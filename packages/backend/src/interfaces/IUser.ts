@@ -11,10 +11,6 @@ namespace iUser {
 	export interface UserLoginForm {
 		memId: string;
 		passWd: string;
-		/** latitude|longitude 조합 */
-		gpsCoord: string;
-		/** 타입[b:일반회원,k:카카오,n:네이버] */
-		memSlct: string;
 	}
 
 	/** Login 성공 회원 정보 (DB) */
@@ -35,10 +31,6 @@ namespace iUser {
 	/** user-agent를 분석하여 나온 Client App 정보 */
 	interface AppInfo {
 		appName?: string;
-		/** 스마트폰구분 (a:안드로이드,b:아이폰) */
-		smtpSlct: string;
-		/** 디바이스 ID */
-		smtpId: string;
 		appVer: string;
 		phoneVer: string;
 	}

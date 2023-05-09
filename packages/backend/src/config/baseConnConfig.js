@@ -141,7 +141,7 @@ module.exports = new (class {
 	get productionServerIndex() {
 		const {
 			// ↓↓↓↓↓↓ 주입 환경 변수
-			HOST_FOLDERS = 'node_tong, node_tong2',
+			HOST_FOLDERS = 'node_1, node_2',
 		} = process.env;
 
 		// HOST_FOLDERS 옵션을 읽어들여 현재 위치하는 폴더의 값과 비교 후 index 변경이 있다면 포트 번호 증가
@@ -383,7 +383,7 @@ module.exports = new (class {
 			HOST = '',
 			PORT = '',
 
-			HOST_FOLDERS = 'node_tong, node_tong2',
+			HOST_FOLDERS = 'node_1, node_2',
 			HEALTH_FILES = 'service1.txt, servce2.txt',
 			/** 백엔드 단독으로 돌릴경우 포트 */
 			BE_PORT = PORT,

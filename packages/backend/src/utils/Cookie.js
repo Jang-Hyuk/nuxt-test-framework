@@ -20,17 +20,6 @@ class BeCookieUtil extends CmCookieUtil {
 		maxAge: 24 * 60 * 60 * 1_000, // 24 hours
 	};
 
-	/** gENC와 gCCV 객체의 key값 연관 정보 */
-	#gencResource = {
-		ID: 'ID',
-		LEVEL: 'LEVEL',
-		SEX: 'SEX',
-		AGE: 'AGE',
-		NO: 'NO',
-		M_AUTH: 'M_AUTH',
-		PASS: 'SESS_KEY',
-	};
-
 	/** @param {import('be/types').DependencyInjection} opt */
 	constructor(opt) {
 		super(opt);
@@ -63,8 +52,6 @@ class BeCookieUtil extends CmCookieUtil {
 	 * FIXME: 쿠키를 설정하자마자 삭제하면 #cookie.remove 사용시 삭제가 토글되는 것으로 보임
 	 */
 	removeAll() {
-		this.gCCV = undefined;
-
 		this.#cookies.removeAll();
 	}
 
